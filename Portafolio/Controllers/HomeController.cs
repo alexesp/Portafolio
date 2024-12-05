@@ -49,8 +49,23 @@ namespace Portafolio.Controllers
             return View(modelo);
         }
 
+        public IActionResult Proyectos()
+        {
+            var proyectos = repositorioProyectos.ObtenerProyectos();
+            return View(proyectos);
+        }
+        [HttpGet]
+        public IActionResult Contacto()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Contacto(ContactoViewModel contactoViewModel)
+        {
+            return RedirectToAction("Gracias");
+        }
 
-        public IActionResult Privacy()
+        public IActionResult Gracias()
         {
             return View();
         }
